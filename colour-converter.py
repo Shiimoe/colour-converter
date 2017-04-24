@@ -1,3 +1,5 @@
+import sys
+
 def hexdic(base):
     base = str(base)
     return {
@@ -23,7 +25,6 @@ def hexdic(base):
 class ColourConvert(object):
     def __init__(self, *colour):
         self.colour = colour
-        self.coef = 255.0/1515.0
 
     def toRGB(self):
         hex = self.colour[0]
@@ -37,5 +38,9 @@ class ColourConvert(object):
         return [int(r), int(g), int(b)]
 
 
-
-print ColourConvert("#c9a453").toRGB()
+if len(sys.argv) == 4:
+    print ColourConvert(sys.argv[1], sys.argv[2], sys.argv[3]).toHex()
+elif len(sys.argv) == 2:
+    print ColourConvert(sys.argv[1]).toRGB()
+else:
+    print("Please enter your colour in a valid format, e.g. RGB: '250 30 59' or HEX: \"#a493f4\" or a493f4\n(quotation marks needed for '#'!) ")
