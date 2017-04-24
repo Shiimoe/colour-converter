@@ -31,11 +31,11 @@ class ColourConvert(object):
         if hex[0] == "#":
             del hex[0]
         hex = "".join(hex)
-        r = float(hexdic(hex[0]) + hexdic(hex[1])) * self.coef
-        g = float(hexdic(hex[2]) + hexdic(hex[3])) * self.coef
-        b = float(hexdic(hex[4]) + hexdic(hex[5])) * self.coef
+        r = ( float(hexdic(hex[0])) * 16) + (float(hexdic(hex[1])) )
+        g = ( float(hexdic(hex[2])) * 16) + (float(hexdic(hex[3])) )
+        b = ( float(hexdic(hex[4])) * 16) + (float(hexdic(hex[5])) )
         return [int(r), int(g), int(b)]
 
 
 
-print ColourConvert("#ab1111").toRGB()
+print ColourConvert("#c9a453").toRGB()
