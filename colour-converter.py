@@ -54,6 +54,13 @@ class ColourConvert(object):
         g = int(self.colour[1])
         b = int(self.colour[2])
 
+        if r > 255:
+            return "Numbers cannot be above 255"
+        if g > 255:
+            return "Numbers cannot be above 255"
+        if b > 255:
+            return "Numbers cannot be above 255"
+
         r1 = (int(math.floor(r / 16)))
         r2 = r - (r1 * 16)
         g1 = (int(math.floor(g / 16)))
