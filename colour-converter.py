@@ -68,4 +68,4 @@ if len(sys.argv) == 4:
 elif len(sys.argv) == 2:
     print ColourConvert(sys.argv[1]).toRGB()
 else:
-    print("Please enter your colour in a valid format, e.g. RGB: '250 30 59' or HEX: \"#a493f4\" or a493f4\n(quotation marks needed for '#'!) ")
+    print("Please enter your colour in a valid format, e.g. RGB: '250 30 59' or HEX: \"#a493f4\" or a493f4 EXACTLY\n")
