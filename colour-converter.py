@@ -54,9 +54,9 @@ class ColourConvert(object):
         g = int(self.colour[1])
         b = int(self.colour[2])
 
-        r = "#" + (str(RGBdic(int(math.floor(r / 16))))) + (str(RGBdic(r % int(math.floor(r / 16)))))
-        g =       (str(RGBdic(int(math.floor(g / 16))))) + (str(RGBdic(g % int(math.floor(g / 16)))))
-        b =       (str(RGBdic(int(math.floor(b / 16))))) + (str(RGBdic(b % int(math.floor(b / 16)))))
+        r = "#" + (RGBdic(int(math.floor(r / 16)))) + (RGBdic(r % int(math.floor(r / 16))))
+        g =       (RGBdic(int(math.floor(g / 16)))) + (RGBdic(g % int(math.floor(g / 16))))
+        b =       (RGBdic(int(math.floor(b / 16)))) + (RGBdic(b % int(math.floor(b / 16))))
 
         hexa = "".join([r, g, b])
 
