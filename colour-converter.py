@@ -54,16 +54,16 @@ class ColourConvert(object):
         g = int(self.colour[1])
         b = int(self.colour[2])
 
-        r1 = (RGBdic(int(math.floor(r / 16))))
-        r2 = (RGBdic(int(math.floor(r / 16) + r - r)))
-        g1 = (RGBdic(int(math.floor(g / 16))))
-        g2 = (RGBdic(int(math.floor(g / 16) + g - g)))
-        b1 = (RGBdic(int(math.floor(b / 16))))
-        b2 = (RGBdic(int(math.floor(b / 16) + b - b)))
+        r1 = (int(math.floor(r / 16)))
+        r2 = r - (r1 * 16)
+        g1 = (int(math.floor(g / 16)))
+        g2 = g - (g1 * 16)
+        b1 = (int(math.floor(b / 16)))
+        b2 = b - (b1 * 16)
 
-        r = "#" + r1 + r2
-        g =       g1 + g2
-        b =       b1 + b2
+        r = "#" + RGBdic(r1) + RGBdic(r2)
+        g =       RGBdic(g1) + RGBdic(g2)
+        b =       RGBdic(b1) + RGBdic(b2)
 
         hexa = "".join([r, g, b])
 
