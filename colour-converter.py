@@ -1,4 +1,5 @@
 import sys
+import math
 
 def hexdic(base):
     base = str(base)
@@ -21,6 +22,17 @@ def hexdic(base):
         "f": "15",
     }.get(base, base)
 
+def RGBdic(base):
+    base = str(base)
+    return {
+        "10": "a",
+        "11": "b",
+        "12": "c",
+        "13": "d",
+        "14": "e",
+        "15": "f",
+    }.get(base, base)
+
 
 class ColourConvert(object):
     def __init__(self, *colour):
@@ -36,6 +48,19 @@ class ColourConvert(object):
         g = ( float(hexdic(hex[2])) * 16) + (float(hexdic(hex[3])) )
         b = ( float(hexdic(hex[4])) * 16) + (float(hexdic(hex[5])) )
         return [int(r), int(g), int(b)]
+
+    def toHex(self):
+        r = int(self.colour[0])
+        g = int(self.colour[1])
+        b = int(self.colour[2])
+
+        r = "#" + (str(RGBdic(int(math.floor(r / 16))))) + (str(RGBdic(r % int(math.floor(r / 16)))))
+        g =       (str(RGBdic(int(math.floor(g / 16))))) + (str(RGBdic(g % int(math.floor(g / 16)))))
+        b =       (str(RGBdic(int(math.floor(b / 16))))) + (str(RGBdic(b % int(math.floor(b / 16)))))
+
+        hexa = "".join([r, g, b])
+
+        return hexa
 
 
 if len(sys.argv) == 4:
