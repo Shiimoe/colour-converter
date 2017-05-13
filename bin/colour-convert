@@ -1,3 +1,3 @@
 #!/usr/bin/env python
-import colour-converter
+from colour_converter import convert
 convert.main()
