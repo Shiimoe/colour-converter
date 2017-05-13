@@ -78,7 +78,15 @@ class ColourConvert(object):
 
 def main():
     if len(sys.argv) == 4:
-        print(ColourConvert(sys.argv[1], sys.argv[2], sys.argv[3]).toHex())
+        i = 1
+        while i <= 3:
+            if sys.argv[i][len(sys.argv[i]) - 1] == ',':
+                sys.argv[i] = sys.argv[i][:-1] # Remove commas in listing rbb values
+            i += 1
+        r = sys.argv[1]
+        g = sys.argv[2]
+        b = sys.argv[3]
+        print(ColourConvert(r, g, b).toHex())
     elif len(sys.argv) == 2:
         print(ColourConvert(sys.argv[1]).toRGB())
     else:
