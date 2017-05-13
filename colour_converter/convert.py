@@ -44,10 +44,10 @@ class ColourConvert(object):
         if hex[0] == "#":
             del hex[0]
         hex = "".join(hex)
-        r = ( float(hexdic(hex[0])) * 16) + (float(hexdic(hex[1])) )
-        g = ( float(hexdic(hex[2])) * 16) + (float(hexdic(hex[3])) )
-        b = ( float(hexdic(hex[4])) * 16) + (float(hexdic(hex[5])) )
-        return [int(r), int(g), int(b)]
+        r = str(int((float(hexdic(hex[0])) * 16) + (float(hexdic(hex[1])))))
+        g = str(int((float(hexdic(hex[2])) * 16) + (float(hexdic(hex[3])))))
+        b = str(int((float(hexdic(hex[4])) * 16) + (float(hexdic(hex[5])))))
+        return r + ", " + g + ", " + b
 
     def toHex(self):
         r = int(self.colour[0])
@@ -81,7 +81,7 @@ def main():
         i = 1
         while i <= 3:
             if sys.argv[i][len(sys.argv[i]) - 1] == ',':
-                sys.argv[i] = sys.argv[i][:-1] # Remove commas in listing rbb values
+                sys.argv[i] = sys.argv[i][:-1] # Remove commas in listing rgb values
             i += 1
         r = sys.argv[1]
         g = sys.argv[2]
