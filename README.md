@@ -8,7 +8,7 @@ git clone https://github.com/Demonstrandum/colour-converter.git && cd colour-con
 ```
 then install the package through `setup.py`:
 ```shell
-sudo pyhton setup.py install
+sudo python setup.py install
 ```
 ## Usage
 From anywhere in your terminal write
