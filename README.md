@@ -18,11 +18,15 @@ colour-convert [COLOUR VALUE]
 e.g.
 
 `colour-convert 255, 14, 127`
+
 `colour-convert 255 14 127`
+
 which both yield `#ff0e7f`
 
 and
 
 `colour-convert "#ac6710"`
+
 `colour-convert ac6710`
+
 both would return  `172, 103, 16`
