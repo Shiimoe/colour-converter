@@ -38,7 +38,7 @@ Thumbs.db
 *.pyc
 
 # install files
-WordTime.egg-info/
+*.egg-info/
 build/
 dist/
 *.app/
